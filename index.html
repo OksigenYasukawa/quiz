@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viva Fantasy Quiz</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+      @media screen and (max-width: 700px) {
+        .logo {
+          width: 100%;
+        }
+      }
+    </style>
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+</script>
+</head>
+<body>
+
+<div class="topnav">
+  
+  <a class="active" href="index.html">Home</a>
+  <a href="#gamemode">Gamemode</a>
+  <a href="#about">About</a>
+  <a href="#opening">Opening</a>
+  <a href="#support">Support</a>
+  <div class="topnav-right">
+    <a href="https://vffandom.wordpress.com/">Viva Fantasy</a>
+  </div>
+</div>
+
+<img class="logo" src="VF Quiz.png">
+
+<div>
+    <h1 class="h11" id="gamemode">Gamemode</h1>
+    <div class="gamemode_btn col fade-in" style="text-align:center;">      
+      <a style="margin:5px;" href="easy.html"><button class="easy">Easy</button></a>
+      <a href="development.html"><button class="easy">Hard</button></a>
+    </div>
+</div>
+
+<div class="columns">
+  <div class="col fade-in">
+    <div>
+      <h1 class="h12" id="about">About</h1>
+      <h3 class="h32">Viva Fantasy Quiz adalah sebuah quiz mengenai Viva Fantasy. <br> 3 Level di Gamemode Easy : •Ruby •Topas •Sapphire <br>3 Level di Gamemode Hard : •Emerald •Purpur •Enderpearl <br><br> DISCLAIMER! <br>Quiz ini adalah buatan penggemar dan bukan asli dari Viva Fantasy.</h3>
+    </div>
+  </div>
+
+  <div class="col fade-in">
+    <div class="opening">
+      <h1 class="h12" id="opening">Opening</h1>
+        <h3 class="h32" id="songname">Viva Fantasy - Reynard Blanc Ch. & Juan Schmulenson</h3>
+        <img src="play.png" id="icon">
+      </div>
+
+      <audio id="song">
+        <source src="opening.mp3" type= "audio/mp3">
+      </audio>
+
+      <script>
+        var song = document.getElementById("song");
+        var icon = document.getElementById("icon");
+
+        icon.onclick = function(){
+          if(song.paused){
+              song.play();
+              icon.src = "pause.png";
+            }else{
+              song.pause();
+              icon.src = "play.png";
+            }
+        }
+
+      </script>
+  </div>
+
+
+    <div class="col fade-in">
+        <h1 class="h12" id="support">Support</h1>
+        <h3 class="h32">Support Oksigen MC sebagai Developer untuk semangat mengembangkan quiz! <br>(Bagi yang mau aja wkwk, terimakasih atas semangatnya.)</h3>
+        <div class="gamemode_btn" style="text-align:center;">      
+          <a style="margin:5px;" href="https://saweria.co/oksigenmc"><button class="easy">Saweria</button></a>
+          <a href="https://trakteer.id/oksigenmc"><button class="easy">Trakteer</button></a>
+        </div>
+    </div>
+
+</div>
+
+  <div>
+    <h3 class="h32" style="padding-top: 250px;">
+      Oksigen MC | VivaFantasy_</h3>
+  </div>
+
+  <div class="space"></div>
+
+  <script src="index.js"></script>
+
+
+</body>
+</html>
